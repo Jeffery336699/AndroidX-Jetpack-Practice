@@ -12,7 +12,7 @@ import javax.inject.Inject
  */
 class HiltSimple @Inject constructor() {
     fun doSomething() {
-        Log.e(TAG, "----doSomething----")
+        Log.e(TAG, "----doSomething----${this.hashCode()}")
     }
 
     companion object {

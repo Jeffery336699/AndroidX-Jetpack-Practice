@@ -5,8 +5,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
-import com.hi.dhl.paging3.data.local.PersonDao
-import com.hi.dhl.paging3.data.local.PersonEntity
+import com.hi.dhl.hilt.local.PersonDao
+import com.hi.dhl.hilt.local.PersonEntity
 
 /**
  * <pre>

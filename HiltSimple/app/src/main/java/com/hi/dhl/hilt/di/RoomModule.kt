@@ -2,8 +2,8 @@ package com.hi.dhl.hilt.di
 
 import android.app.Application
 import androidx.room.Room
-import com.hi.dhl.paging3.data.local.AppDataBase
-import com.hi.dhl.paging3.data.local.PersonDao
+import com.hi.dhl.hilt.local.AppDataBase
+import com.hi.dhl.hilt.local.PersonDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

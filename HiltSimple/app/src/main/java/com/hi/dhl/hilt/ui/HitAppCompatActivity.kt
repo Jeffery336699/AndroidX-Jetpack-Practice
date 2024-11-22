@@ -19,6 +19,8 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class HitAppCompatActivity : AppCompatActivity() {
     private val mHitViewModule: HiltViewModel by viewModels()
+
+    // TODO: 这种方式必须要使用才能触发view被添加到Activity中，切记！
     private val binding: ActivityHiltBinding by viewbind()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,7 +37,7 @@ class HitAppCompatActivity : AppCompatActivity() {
         })
 
         binding.btnArgument.setOnClickListener {
-            mHitViewModule.passArgument("address : shanghai")
+            mHitViewModule.passArgument("address : shanghai 2")
         }
     }
 }

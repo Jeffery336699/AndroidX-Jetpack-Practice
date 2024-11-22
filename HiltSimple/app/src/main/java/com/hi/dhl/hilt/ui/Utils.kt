@@ -1,8 +1,7 @@
 package com.hi.dhl.hilt.ui
 
-import com.hi.dhl.hilt.di.HiltSimple
-import com.hi.dhl.paging3.data.local.PersonDao
-import com.hi.dhl.paging3.data.local.PersonEntity
+import com.hi.dhl.hilt.local.PersonDao
+import com.hi.dhl.hilt.local.PersonEntity
 import javax.inject.Inject
 
 /**

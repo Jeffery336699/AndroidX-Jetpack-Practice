@@ -1,4 +1,4 @@
-package com.hi.dhl.paging3.data.local
+package com.hi.dhl.hilt.local
 
 import androidx.room.Dao
 import androidx.room.Insert
