@@ -1,6 +1,7 @@
 package com.hi.dhl.splashscreen.ui
 
 import android.animation.ObjectAnimator
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -21,6 +22,9 @@ class MainActivity : AppCompatActivity() {
         val splashScreen = installSplashScreen()
         with(binding) {
             // init view
+            binding.tvMain.setOnClickListener {
+                startActivity(Intent(this@MainActivity,SecondActivity::class.java))
+            }
         }
 
         /**
