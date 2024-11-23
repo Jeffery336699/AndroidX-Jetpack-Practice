@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
             handView.setOnClickListener {
                 AppInitializer.getInstance(applicationContext)
                     .initializeComponent(LibaryD::class.java)
-
+                // 标注了个静态对象来判断是否初始化成功
                 if (LibaryD.Dependency.initializer) {
                     tvTip.setText("手动初始化成功")
                 } else {
