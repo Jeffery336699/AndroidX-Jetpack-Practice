@@ -27,7 +27,7 @@ class RepositoryFactory(
 
     val pagingConfig = PagingConfig(
         // 每页显示的数据的大小
-        pageSize = 30,
+        pageSize = 10,
 
         // 开启占位符
         enablePlaceholders = false

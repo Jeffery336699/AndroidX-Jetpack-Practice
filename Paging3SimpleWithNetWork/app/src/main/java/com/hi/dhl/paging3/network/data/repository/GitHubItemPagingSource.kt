@@ -20,6 +20,7 @@ class GitHubItemPagingSource(
         return try {
             // key 相当于 id
             val key = params.key ?: 0
+            println("load key = $key")
             // 获取网络数据
             val items = api.getGithubAccount(key, params.loadSize)
             // 请求失败或者出现异常，会跳转到 case 语句返回 LoadResult.Error(e)
