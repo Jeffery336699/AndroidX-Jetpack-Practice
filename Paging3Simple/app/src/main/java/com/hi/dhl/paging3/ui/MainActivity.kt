@@ -44,9 +44,13 @@ class MainActivity : DataBindingAppCompatActivity(), AnkoLogger {
         /**
          *  方法三 [MainViewModel.pageDataLiveData3] 推荐
          */
+        var i = 0
         mainViewModel.pageDataLiveData3.observe(this, Observer { data ->
+            // 就相当于一个活的水龙头，你没法预测它里面的容量多少，这里永远i等于0(表示的是开始订阅了)
+            println("${i++} ,MainActivity: pageDataLiveData3: $data")
             personAdapter.submitData(lifecycle, data)
         })
+
 
         /**
          * 方法一[MainViewModel.pageDataLiveData] 和方法二 [MainViewModel.pageDataLiveData2] 调用方式相同
@@ -86,6 +90,9 @@ class MainActivity : DataBindingAppCompatActivity(), AnkoLogger {
                 (viewHolder as PersonViewHolder).mBinding.person?.let {
                     // 当 item 左滑 或者 右滑 的时候删除 item
                     mainViewModel.remove(it)
+                    personAdapter.notifyItemRemoved(viewHolder.layoutPosition)
+                    // personAdapter.notifyDataSetChanged()
+                    println("MainActivity: onSwiped: ${viewHolder.layoutPosition}")
                 }
             }
         }).attachToRecyclerView(binding.rvList)
