@@ -2,8 +2,13 @@ package com.hi.dhl.hilt.appstartup.ui
 
 import androidx.hilt.Assisted
 import androidx.hilt.lifecycle.ViewModelInject
-import androidx.lifecycle.*
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.SavedStateHandle
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.liveData
 import com.hi.dhl.hilt.appstartup.data.Repository
+import com.hi.dhl.hilt.appstartup.data.local.PersonDao
 import com.hi.dhl.hilt.appstartup.data.local.PersonEntity
 
 /**
@@ -15,6 +20,7 @@ import com.hi.dhl.hilt.appstartup.data.local.PersonEntity
  */
 class HiltViewModel @ViewModelInject constructor(
     private val tasksRepository: Repository,
+    private val personDao: PersonDao,
     //SavedStateHandle 用于进程被终止时，存储和恢复数据
     @Assisted private val savedStateHandle: SavedStateHandle
 ) : ViewModel() {
@@ -28,6 +34,8 @@ class HiltViewModel @ViewModelInject constructor(
 
     // 对外暴露不可变的 LiveData
     val userId: LiveData<String> = _userId
+
+    val userList = personDao.getAll()
 
 
     /**

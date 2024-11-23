@@ -15,7 +15,7 @@ import javax.inject.Singleton
 @Singleton
 class HiltSimple @Inject constructor() {
     fun doSomething() {
-        Log.e(TAG, "----doSomething----")
+        Log.e(TAG, "----doSomething----$this")
     }
 
     companion object {

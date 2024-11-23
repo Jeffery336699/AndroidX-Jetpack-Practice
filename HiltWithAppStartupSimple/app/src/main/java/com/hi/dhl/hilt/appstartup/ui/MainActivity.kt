@@ -65,17 +65,25 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                     mHitViewModule.insert()
                     toast("插入成功")
                 }
+
                 jumpSimple -> {
                     mHiltSimple.doSomething()
                     toast("调用成功，查看控制台日志")
                 }
+
                 jumpBind -> {
                     mAnalyticsService.init()
                     toast("调用成功，查看控制台日志")
                 }
+
                 else -> {
 
                 }
+            }
+
+            mHitViewModule.userList.observe(this@MainActivity) {
+                textShow.text = it.size.toString()
+                Log.e(TAG, "userList: $it")
             }
         }
     }

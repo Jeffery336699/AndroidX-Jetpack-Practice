@@ -18,6 +18,7 @@ import dagger.hilt.android.components.ApplicationComponent
 @Module
 @InstallIn(ApplicationComponent::class)
 // 这里使用了 ActivityComponent，因此 WorkServiceModule 绑定到 ActivityComponent 的生命周期。
+// 同样的Module注入到组件，但是内部通过的@binds方式返回接口形式，如果是具体实例的话可以用@provides
 abstract class WorkServiceModule {
 
     /**

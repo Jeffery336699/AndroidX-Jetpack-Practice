@@ -24,7 +24,7 @@
             android:authorities="${applicationId}.androidx-startup"
             android:exported="false"
             tools:node="merge">
-
+            <!--自动初始化方式-->
             <meta-data
                 android:name="com.hi.dhl.hilt.appstartup.init.AppInitializer"
                 android:value="androidx.startup" />
